@@ -153,11 +153,17 @@
 
                 var target = document.getElementById('cat-' + idx);
                 if (target) {
-                    // اسکرول هوشمند: دسته انتخاب‌شده را به وسط صفحه ببر
-                    // تا دسته‌های همسایه که در کنارند بیرون بیایند و کاربر بفهمد منوی بیشتری هست
                     var navH = nav.getBoundingClientRect().height;
-                    var centerShift = (window.innerHeight - navH) / 2;
-                    var top = target.getBoundingClientRect().top + window.scrollY - navH - centerShift + target.getBoundingClientRect().height / 2;
+                    var top;
+                    if (idx === 0) {
+                        // دسته اول: از ابتدای لیست شروع شود و هیچ آیتمی بالای صفحه مخفی نماند
+                        top = 0;
+                    } else {
+                        // اسکرول هوشمند: دسته انتخاب‌شده را به وسط صفحه ببر
+                        // تا دسته‌های همسایه که در کنارند بیرون بیایند و کاربر بفهمد منوی بیشتری هست
+                        var centerShift = (window.innerHeight - navH) / 2;
+                        top = target.getBoundingClientRect().top + window.scrollY - navH - centerShift + target.getBoundingClientRect().height / 2;
+                    }
                     window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
                 }
             });
