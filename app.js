@@ -145,8 +145,21 @@
                     l.classList.remove('active');
                 });
                 a.classList.add('active');
+
+                // اسکرول افقی نوار منو: لینک کلیک‌شده را به وسط نوار بیاور
+                // تا لینک‌های همسایه (مقبلات/معجنات و...) بیرون بیایند و دیده شوند
+                // (scrollIntoView با inline:'center' در RTL خودش درست عمل می‌کند)
+                a.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
                 var target = document.getElementById('cat-' + idx);
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (target) {
+                    // اسکرول هوشمند: دسته انتخاب‌شده را به وسط صفحه ببر
+                    // تا دسته‌های همسایه که در کنارند بیرون بیایند و کاربر بفهمد منوی بیشتری هست
+                    var navH = nav.getBoundingClientRect().height;
+                    var centerShift = (window.innerHeight - navH) / 2;
+                    var top = target.getBoundingClientRect().top + window.scrollY - navH - centerShift + target.getBoundingClientRect().height / 2;
+                    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+                }
             });
             nav.appendChild(a);
         });
