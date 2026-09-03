@@ -21,8 +21,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Cairo', sans-serif;
-    font-family: 'Cairo', -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Rubik', -apple-system, 'Segoe UI', Tahoma, sans-serif;
     background:
         radial-gradient(1200px 600px at 50% -5%, rgba(212, 175, 55, 0.10), transparent 60%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
@@ -34,20 +34,28 @@ body {
 
 /* ---------- فونت ---------- */
 @font-face {
-    font-family: 'Cairo';
+    font-family: 'Rubik';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400 900;
     font-display: swap;
-    src: url('assets/fonts/cairo-arabic.woff2') format('woff2');
-    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
+    src: url('assets/fonts/rubik-arabic.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0897-08E1, U+FB50-FDFF, U+FE70-FEFC;
 }
 @font-face {
-    font-family: 'Cairo';
+    font-family: 'Rubik';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400 900;
     font-display: swap;
-    src: url('assets/fonts/cairo-latin.woff2') format('woff2');
+    src: url('assets/fonts/rubik-latin.woff2') format('woff2');
     unicode-range: U+0000-00FF;
+}
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: swap;
+    src: url('assets/fonts/rubik-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+1E00-1EFF, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* ---------- هدر ---------- */
@@ -63,7 +71,7 @@ body {
 
 .rest-name {
     font-size: clamp(1.7rem, 7vw, 2.3rem);
-    font-weight: 800;
+    font-weight: 400;
     color: var(--gold2);
     letter-spacing: 1px;
     text-shadow: 0 2px 14px rgba(212, 175, 55, 0.35);
@@ -86,7 +94,7 @@ body {
     background: linear-gradient(135deg, #25d366, #128c7e);
     color: #fff;
     font-size: clamp(0.95rem, 3.8vw, 1.05rem);
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: none;
     box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
 }
@@ -133,7 +141,7 @@ body {
     background: var(--card);
     color: var(--gold2);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: none;
     white-space: nowrap;
     transition: background 0.2s ease, color 0.2s ease;
@@ -190,7 +198,7 @@ body {
 .cat-title-wrap { flex: 1; text-align: right; }
 .cat-title {
     font-size: clamp(1.05rem, 4.5vw, 1.3rem);
-    font-weight: 700;
+    font-weight: 400;
     color: var(--gold2);
 }
 .cat-note {
@@ -238,7 +246,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--gold2);
     white-space: nowrap;
 }
@@ -266,7 +274,7 @@ body {
     background: linear-gradient(135deg, var(--gold), var(--gold3));
     color: #0a120c;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 400;
     cursor: pointer;
     text-decoration: none;
     box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
@@ -286,7 +294,7 @@ body {
     position: absolute;
     transform: rotate(-26deg);
     white-space: nowrap;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 2px;
     user-select: none;
 }
